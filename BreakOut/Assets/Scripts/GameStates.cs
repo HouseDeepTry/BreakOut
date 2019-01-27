@@ -14,10 +14,20 @@ public class GameStates : MonoBehaviour
     {
         scoreText.text=curentScore.ToString();
     }
+    private void Awake()
     {
         /*Singleton Pattern
          * load GameStatus từ scene này qua scene mà ko bị destroy
         */
+        int GameStatusCount = FindObjectsOfType<GameStates>().Length;
+        if(GameStatusCount>1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     // Update is called once per frame
