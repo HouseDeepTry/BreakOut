@@ -116,8 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5656153169330337338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 7669d2a7f95070546b8bceccf04cbe0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: b8a534d780641b7489a35dea1335a40f, type: 3}
+  ImpactVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
