@@ -18,7 +18,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        FindObjectOfType<GameStates>().AddtoScore();
+        FindObjectOfType<GameSeesion>().AddtoScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.DestroyBlock();

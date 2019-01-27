@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2195867756878603018}
   - component: {fileID: 7418815123849438819}
   m_Layer: 0
-  m_Name: GameStates
+  m_Name: GameSeesion
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -60,15 +60,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 226533750, guid: a65fa23db58906b45a92738b11c1446f, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
-        type: 2}
-    - target: {fileID: 226533750, guid: a65fa23db58906b45a92738b11c1446f, type: 3}
-      propertyPath: m_textInfo.textComponent
-      value: 
-      objectReference: {fileID: 7023964660056759555}
     - target: {fileID: 6123721666397267504, guid: a65fa23db58906b45a92738b11c1446f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,6 +165,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 226533750, guid: a65fa23db58906b45a92738b11c1446f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 226533750, guid: a65fa23db58906b45a92738b11c1446f, type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 7023964660056759555}
     - target: {fileID: 6123721666978744575, guid: a65fa23db58906b45a92738b11c1446f,
         type: 3}
       propertyPath: m_TargetGraphic

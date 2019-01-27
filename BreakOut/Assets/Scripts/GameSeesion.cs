@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameStates : MonoBehaviour
+public class GameSeesion : MonoBehaviour
 {
     [Range(0.1f, 3f)] [SerializeField] float m_speedGame;
 
@@ -19,9 +19,10 @@ public class GameStates : MonoBehaviour
         /*Singleton Pattern
          * load GameStatus từ scene này qua scene mà ko bị destroy
         */
-        int GameStatusCount = FindObjectsOfType<GameStates>().Length;
+        int GameStatusCount = FindObjectsOfType<GameSeesion>().Length;
         if(GameStatusCount>1)
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else
@@ -39,5 +40,10 @@ public class GameStates : MonoBehaviour
     {
         curentScore+=pointBlockdestroy;
         scoreText.text=curentScore.ToString();
+    }
+
+    public void ResetGame()
+    {
+        Destroy(gameObject);
     }
 }
