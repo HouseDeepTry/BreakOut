@@ -14,6 +14,11 @@ public class GameStates : MonoBehaviour
     {
         scoreText.text=curentScore.ToString();
     }
+    {
+        /*Singleton Pattern
+         * load GameStatus từ scene này qua scene mà ko bị destroy
+        */
+    }
 
     // Update is called once per frame
     void Update()
