@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class Block : MonoBehaviour
     //Level Damage blocks
     [SerializeField] int maxHit;
     [SerializeField] int timesHit;
+    //Sprite
+    [SerializeField] Sprite[] hitSprites;
     private void Start()
     {
         CountBreaksBlock();
@@ -32,12 +35,27 @@ public class Block : MonoBehaviour
     {
         if (tag == "Break")
         {
+            ConditionsBreak();
+        }
+    }
+
+    private void ConditionsBreak()
+    {
             timesHit++;
-            if(timesHit>=maxHit)
+            if (timesHit >= maxHit)
             {
                 DestroyBlock();
             }
-        }
+            else
+            {
+                SpriteHitDmg();
+            }
+    }
+
+    private void SpriteHitDmg()
+    {
+        int hitIndex = timesHit - 1;
+        GetComponent<SpriteRenderer>().sprite = hitSprites[hitIndex];
     }
 
     private void DestroyBlock()
