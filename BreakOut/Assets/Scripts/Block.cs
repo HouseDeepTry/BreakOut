@@ -10,6 +10,10 @@ public class Block : MonoBehaviour
     [SerializeField] GameObject ImpactVFX;
 
     private Level level;
+
+    //Level Damage blocks
+    [SerializeField] int maxHit;
+    [SerializeField] int timesHit;
     private void Start()
     {
         CountBreaksBlock();
@@ -28,7 +32,11 @@ public class Block : MonoBehaviour
     {
         if (tag == "Break")
         {
-            DestroyBlock();
+            timesHit++;
+            if(timesHit>=maxHit)
+            {
+                DestroyBlock();
+            }
         }
     }
 
