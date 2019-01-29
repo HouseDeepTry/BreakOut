@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] PaddleController paddle1;
@@ -12,13 +9,18 @@ public class BallController : MonoBehaviour
     Vector2 paddletoballVector;
     // có audio này để play audio 
     AudioSource myAudio;
-    //
+
+    //Khi va chạm sẽ có những vận tốc khác nhau để tránh hiện tượng di chuyển ngang vĩnh viễn
+    [SerializeField] float randomFactor = 0.2f;
+    Rigidbody2D myRigibody2D;
     void Start()
     {
         // khoảng cách từ quả bóng dến cái paddle
         paddletoballVector = transform.position - paddle1.transform.position;
         hasStart = false;
         myAudio = GetComponent<AudioSource>();
+        myRigibody2D = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class BallController : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);
+            myRigibody2D.velocity = new Vector2(xPush, yPush);
             hasStart = true;
         }
     }
@@ -49,10 +51,12 @@ public class BallController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioClip audio = ballClip[UnityEngine.Random.Range(0, ballClip.Length)];
+        Vector2 VecrandomFactor = new Vector2(Random.Range(0,randomFactor), Random.Range(0, randomFactor));
         if (hasStart)
         {
+            AudioClip audio = ballClip[UnityEngine.Random.Range(0, ballClip.Length)];
             myAudio.PlayOneShot(audio);
+            myRigibody2D.velocity += VecrandomFactor;
         }
     }   
 }
