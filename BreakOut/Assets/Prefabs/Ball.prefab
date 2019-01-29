@@ -140,7 +140,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 748661f8e1786314abdbee71762a27f9, type: 3}
   xPush: 2
   yPush: 15
-  randomFactor: 0.3
+  randomFactor: 0.2
 --- !u!82 &6415991610020792666
 AudioSource:
   m_ObjectHideFlags: 0

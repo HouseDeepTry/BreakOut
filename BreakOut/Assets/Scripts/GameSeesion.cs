@@ -10,6 +10,7 @@ public class GameSeesion : MonoBehaviour
     [SerializeField] float curentScore=0;
     [SerializeField] float pointBlockdestroy=10;
     [SerializeField] TextMeshProUGUI scoreText;
+    private float levelScore=0f;//điểm từng màn được cộng vào đây
     void Start()
     {
         scoreText.text=curentScore.ToString();
@@ -38,12 +39,29 @@ public class GameSeesion : MonoBehaviour
     }
     public void AddtoScore()
     {
-        curentScore+=pointBlockdestroy;
-        scoreText.text=curentScore.ToString();
+        curentScore += pointBlockdestroy;
+        scoreTextChange();
     }
 
     public void ResetGame()
     {
         Destroy(gameObject);
+    }
+    //2 hàm dưới đây để lưu điểm khi chết 
+    public void AddScoreLevels()
+    {
+        levelScore=curentScore;
+    }
+    public void GetScoreLevels()
+    {
+        curentScore = levelScore;
+        scoreTextChange();
+    }
+
+
+
+    private void scoreTextChange()
+    {
+        scoreText.text = curentScore.ToString();
     }
 }

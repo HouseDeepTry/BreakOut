@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8199664668705404789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 31f9eb886ca5e7e49bb09dd694627e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   breakableBlock: 0
+  Panelgame: {fileID: 0}
 --- !u!114 &1224149763420477404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,7 +55,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8199664668705404789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 5b27b1005bffb484e9e5644f8ee78758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

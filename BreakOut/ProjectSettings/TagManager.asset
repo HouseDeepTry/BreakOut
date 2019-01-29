@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Break
   - Unbreak
+  - PanelController
   layers:
   - Default
   - TransparentFX
