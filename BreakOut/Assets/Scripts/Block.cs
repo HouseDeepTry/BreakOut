@@ -36,6 +36,10 @@ public class Block : MonoBehaviour
         {
             ConditionsBreak();
         }
+        if(collision.gameObject.tag=="Boom")
+        {
+            DestroyBlock();
+        }
     }
 
     private void ConditionsBreak()
