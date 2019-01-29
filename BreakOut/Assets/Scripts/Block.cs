@@ -13,7 +13,6 @@ public class Block : MonoBehaviour
     private Level level;
 
     //Level Damage blocks
-    [SerializeField] int maxHit;
     [SerializeField] int timesHit;
     //Sprite
     [SerializeField] Sprite[] hitSprites;
@@ -41,15 +40,17 @@ public class Block : MonoBehaviour
 
     private void ConditionsBreak()
     {
-            timesHit++;
-            if (timesHit >= maxHit)
-            {
-                DestroyBlock();
-            }
-            else
-            {
-                SpriteHitDmg();
-            }
+
+        timesHit++;
+        int maxHit = hitSprites.Length+1;
+        if (timesHit >= maxHit)
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            SpriteHitDmg();
+        }
     }
 
     private void SpriteHitDmg()
