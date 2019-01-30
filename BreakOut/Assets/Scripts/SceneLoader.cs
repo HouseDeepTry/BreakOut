@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-	public void LoadNextScene()
+    public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
@@ -28,5 +28,20 @@ public class SceneLoader : MonoBehaviour {
     {
         Application.LoadLevel(Application.loadedLevel);
         FindObjectOfType<GameSeesion>().GetScoreLevels();
+    }
+    
+
+    public void LoadSeclecScene(int numberLevel)
+    {
+        SceneManager.LoadScene(numberLevel);
+    }
+    // làm việc với panel
+    public void panelActive(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+    public void panelInActive(GameObject panel)
+    {
+        panel.SetActive(false);
     }
 }
